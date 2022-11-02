@@ -18,8 +18,8 @@ module.exports = {
       },
       // load css
       {
-        test: /\.(css)$/,
-        use: ["css-loader", "style-loader"],
+        test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }],
       },
       // load html
       {
