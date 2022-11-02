@@ -7,6 +7,12 @@ module.exports = {
         // look up files that end in .js or .jsx
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
+        // 'use' tells webpack which loader to run
+        // loader is what converts the code into the correct version
+        use: {
+          // babel loader looks inside of directory for .babelrc file
+          loader: "babel-loader",
+        },
       },
     ],
   },
