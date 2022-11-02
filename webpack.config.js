@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   module: {
     // 'rules' define webpack on what is should do based on certain file types that it encounters
@@ -14,10 +16,21 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      // load css
       {
         test: /\.(css)$/,
         use: ["css-loader", "style-loader"],
       },
+      // load html
+      {
+        test: /\.(html)$/,
+        use: ["html-loader"],
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "/index.html",
+    }),
+  ],
 };
